@@ -1,0 +1,36 @@
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class ScreenShot {
+
+	public static void main(String[] args) throws IOException {
+		
+		
+		
+
+		System.setProperty("webdriver.chrome.driver","C:\\Selenium WebDrivers\\chromedriver_win32\\chromedriver.exe");
+		
+		WebDriver c_driver =new ChromeDriver();
+		
+		c_driver.manage().window().maximize();
+		
+		c_driver.get("https://www.spicejet.com/");
+
+		
+		File src=((TakesScreenshot)c_driver).getScreenshotAs(OutputType.FILE);
+		
+		File dest=new File("F:\\spice.png");
+		
+		FileUtils.copyFile(src, dest);
+	
+		
+		}
+
+}

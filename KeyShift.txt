@@ -1,0 +1,31 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class KeyBorad_Shift {
+
+	public static void main(String[] args) {
+		
+		System.setProperty("webdriver.chrome.driver","C:\\Selenium WebDrivers\\chromedriver_win32\\chromedriver.exe");
+		
+		WebDriver c_driver =new ChromeDriver();
+		
+		c_driver.get("https://www.facebook.com/");
+		
+		WebElement Name;
+		
+		Name=c_driver.findElement(By.name("firstname"));
+		
+		Actions action=new Actions(c_driver);
+		
+		action.keyDown(Keys.SHIFT).sendKeys("Karthik").keyUp(Keys.SHIFT).sendKeys("Sundararajan").build().perform();
+		
+		
+		
+
+	}
+
+}

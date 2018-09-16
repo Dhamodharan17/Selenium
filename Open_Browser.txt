@@ -1,0 +1,28 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Open_Facebook {
+
+	public static void main(String[] args) {
+		
+		
+	System.setProperty("webdriver.chrome.driver","C:\\Selenium WebDrivers\\chromedriver_win32\\chromedriver.exe");
+
+	//Give Your Executable Path or Download from below link
+	//https://www.seleniumhq.org/download/
+		
+	WebDriver driver=new ChromeDriver();
+	
+	driver.manage().window().maximize();
+			
+		
+	driver.get("https://www.facebook.com/");
+	
+	
+			
+				
+
+	}
+
+}

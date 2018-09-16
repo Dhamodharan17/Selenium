@@ -1,0 +1,33 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Alert_Ok_Exit {
+
+	public static void main(String[] args) throws InterruptedException {
+		
+System.setProperty("webdriver.chrome.driver","C:\\Selenium WebDrivers\\chromedriver_win32\\chromedriver.exe");
+		
+		WebDriver c_driver =new ChromeDriver();
+		
+		c_driver.manage().window().maximize();
+		
+		c_driver.get("https://chandanachaitanya.github.io/selenium-practice-site/?languages=Java");
+		
+		
+		WebElement Prompt;
+		
+		Prompt=c_driver.findElement(By.xpath("//button[@id='confirmBox']"));
+		
+		Prompt.click();
+		
+		
+		Thread.sleep(3000);
+		
+		c_driver.switchTo().alert().dismiss();
+	
+
+	}
+
+}

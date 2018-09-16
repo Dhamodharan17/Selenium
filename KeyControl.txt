@@ -1,0 +1,36 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class KeyBoard_Control {
+
+	public static void main(String[] args) throws InterruptedException {
+
+		
+		
+		
+		
+		
+		System.setProperty("webdriver.chrome.driver","C:\\Selenium WebDrivers\\chromedriver_win32\\chromedriver.exe");
+		
+		WebDriver c_driver =new ChromeDriver();
+		
+		c_driver.get("https://en.wikipedia.org/wiki/Wiki");
+		
+		
+		Actions action=new Actions(c_driver);
+		
+		
+		action.sendKeys(Keys.chord(Keys.CONTROL,"a")).build().perform();
+		
+		
+	//action.keyDown(Keys.CONTROL).sendKeys("a").keyDown(Keys.CONTROL).build().perform();
+
+	
+		Thread.sleep(3000);
+		c_driver.close();
+	}
+
+}

@@ -1,0 +1,38 @@
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Check_All {
+
+	public static void main(String[] args) {
+	
+		
+		
+		
+		System.setProperty("webdriver.chrome.driver","C:\\Selenium WebDrivers\\chromedriver_win32\\chromedriver.exe");
+		
+		WebDriver driver=new ChromeDriver();
+		
+		driver.manage().window().maximize();
+		
+		driver.get("https://chandanachaitanya.github.io/selenium-practice-site/?languages=Java");
+		
+		
+		
+		List<WebElement> Check;
+		
+		Check=driver.findElements(By.xpath("//input[@type='checkbox']"));
+
+		//USING FOR LOOP WE CAN CHECK ALL THE CHECKBOXES
+		
+		for(WebElement e:Check)
+		{
+			e.click();
+		}
+
+	}
+
+}

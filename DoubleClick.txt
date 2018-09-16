@@ -1,0 +1,36 @@
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class DoubleClick {
+
+	public static void main(String[] args) {
+	
+		
+		
+		
+		
+		
+		
+		System.setProperty("webdriver.chrome.driver","C:\\Selenium WebDrivers\\chromedriver_win32\\chromedriver.exe");
+		
+		WebDriver c_driver =new ChromeDriver();
+		
+		c_driver.get("https://www.google.com/");
+		
+		Actions action=new Actions(c_driver);
+		
+		action.doubleClick().build().perform();
+		
+
+		
+		
+		
+		
+		
+		
+		
+
+	}
+
+}

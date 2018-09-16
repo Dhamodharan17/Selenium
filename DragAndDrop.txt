@@ -1,0 +1,45 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class DragAndDrop {
+
+	public static void main(String[] args) {
+	
+		
+		
+
+		System.setProperty("webdriver.chrome.driver","C:\\Selenium WebDrivers\\chromedriver_win32\\chromedriver.exe");
+		
+		WebDriver c_driver =new ChromeDriver();
+		
+		c_driver.manage().window().maximize();
+		
+		c_driver.get("http://demo.guru99.com/test/drag_drop.html");
+		
+		WebElement From;
+		
+		From=c_driver.findElement(By.xpath("//*[@data-id='5']"));
+		
+		WebElement To;
+		
+		To=c_driver.findElement(By.xpath("//ol[@id='bank']"));
+		
+		
+		Actions action=new Actions(c_driver);
+		
+		action.moveToElement(From).clickAndHold(From).release(To).build().perform();
+		
+		//action.dragAndDrop(From,To).build().perform();
+		
+		
+		
+		
+		
+		
+
+	}
+
+}

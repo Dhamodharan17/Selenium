@@ -1,0 +1,29 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class MouseOver {
+
+	public static void main(String[] args) throws InterruptedException {
+	
+		System.setProperty("webdriver.chrome.driver","C:\\Selenium WebDrivers\\chromedriver_win32\\chromedriver.exe");
+		
+		WebDriver c_driver =new ChromeDriver();
+		
+		c_driver.manage().window().maximize();
+		
+		c_driver.get("https://www.spicejet.com/");
+		
+		WebElement Hover =c_driver.findElement(By.linkText("Check-In"));
+		
+		Actions action=new Actions(c_driver);
+		
+		action.moveToElement(Hover).build().perform();
+		
+		Thread.sleep(3000);
+		c_driver.close();
+}
+
+}

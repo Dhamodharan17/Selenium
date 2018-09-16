@@ -1,0 +1,66 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class Dropdown_Box {
+
+	public static void main(String[] args) {
+		
+		System.setProperty("webdriver.chrome.driver","C:\\Selenium WebDrivers\\chromedriver_win32\\chromedriver.exe");
+		
+		WebDriver driver=new ChromeDriver();
+		
+		driver.manage().window().maximize();
+		
+		driver.get("https://www.facebook.com/");
+		
+		
+
+		//BIRTHDAY DROPDOWN IN FACEBOOK
+		
+		
+		
+		//METHOD 1: " SelectByIndex " Method
+
+		WebElement Day;
+		
+		Day=driver.findElement(By.id("day"));
+		
+		Select Day_Select=new Select(Day);
+		
+		Day_Select.selectByIndex(30);
+
+		
+		//METHOD 2: " SelectByVisibleText " Method
+
+		WebElement Month;
+		
+		Month=driver.findElement(By.id("month"));
+		
+		Select Month_Select=new Select(Month);
+		
+		Month_Select.selectByVisibleText("Jan");
+
+
+		
+		//METHOD 3: " SelectByValue " Method
+		
+		WebElement Year;
+		
+		Year=driver.findElement(By.id("year"));
+		
+		Select Year_Select=new Select(Year);
+		
+		Year_Select.selectByValue("1997");
+		
+		
+		
+		
+		
+	
+
+	}
+
+}

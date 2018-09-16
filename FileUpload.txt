@@ -1,0 +1,50 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class FileUpload {
+
+	public static void main(String[] args) {
+		
+		
+		
+
+		System.setProperty("webdriver.chrome.driver","C:\\Selenium WebDrivers\\chromedriver_win32\\chromedriver.exe");
+		
+		
+		WebDriver c_driver =new ChromeDriver();
+		
+		c_driver.manage().window().maximize();
+		
+		
+		c_driver.get("http://demo.automationtesting.in/FileUpload.html");
+		
+		
+		WebElement Btn;
+		
+		
+		Btn=c_driver.findElement(By.xpath("//input[@type='file']"));
+	
+		Btn.sendKeys("F:\\spice.png");
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+	}
+
+}

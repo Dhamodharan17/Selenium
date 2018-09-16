@@ -1,0 +1,43 @@
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class SimpleAlert {
+
+	public static void main(String[] args) throws InterruptedException {
+		
+		
+		
+
+		System.setProperty("webdriver.chrome.driver","C:\\Selenium WebDrivers\\chromedriver_win32\\chromedriver.exe");
+		
+		WebDriver c_driver =new ChromeDriver();
+		
+		c_driver.manage().window().maximize();
+		
+		c_driver.get("https://mail.rediff.com/cgi-bin/login.cgi");
+		
+		WebElement Go;
+		
+		Go=c_driver.findElement(By.name("proceed"));
+		
+		Go.click();
+		
+		Thread.sleep(4000);
+		
+		c_driver.switchTo().alert().accept();
+		
+	Thread.sleep(4000);
+	
+	c_driver.close();
+		
+		
+		
+		
+		
+
+	}
+
+}

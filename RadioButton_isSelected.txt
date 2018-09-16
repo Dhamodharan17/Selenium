@@ -1,0 +1,48 @@
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class RadioButton_Verify {
+
+	public static void main(String[] args) {
+	
+		
+		    System.setProperty("webdriver.chrome.driver","C:\\Selenium WebDrivers\\chromedriver_win32\\chromedriver.exe");
+			
+			WebDriver driver=new ChromeDriver();
+			
+			driver.manage().window().maximize();
+			
+			driver.get("https://www.facebook.com/");
+			
+			List<WebElement> Radio;
+			
+			Radio=driver.findElements(By.xpath("//input[@type='radio']"));
+			
+			
+			if(Radio.get(0).isSelected())
+			{
+				System.out.println("Female is Selected");
+				//Radio.get(1).click();               //IF YOU WANT SELECT MALE UN UNCOMMENT 
+			}
+			else if(Radio.get(1).isSelected())
+			{
+				System.out.println("Male is selected");
+				//Radio.get(0).click();               //IF YOU WANT SELECT FEMALE UN UNCOMMENT 
+			}
+			else
+			{
+				System.out.println("Nothing selected");
+			}
+			
+			
+		
+		
+		
+
+	}
+
+}
