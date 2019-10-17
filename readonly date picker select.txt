@@ -1,0 +1,9 @@
+String country=dataTable.getData("IGP_Application", "FromDate");
+
+((JavascriptExecutor)driver.getWebDriver()).executeScript ("document.getElementById('txtFromDate').removeAttribute('readonly',0);"); // Enables the from date box
+
+WebElement fromDateBox= driver.findElement(By.id("txtFromDate"));
+
+fromDateBox.clear();
+
+fromDateBox.sendKeys(country); //Enter date in required format
